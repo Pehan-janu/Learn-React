@@ -1,0 +1,79 @@
+<!DOCTYPE html>  <!-- Use a modern version of html-->
+<html>  <!--Represent a website-->
+  <head>
+    <title>Learn React</title> <!--Title of website-->
+  </head>
+  <body>  <!--visible on the page -->
+
+    <!--Container to get react , things isolated and organize-->
+    <div class="js-container"></div>
+
+    <!-- 
+    load javascript code to the browser
+    <script src="react-basics.js"> </script>
+    -->
+    
+    <!--load javascript codes from web (external library - codes that is outside our computer) -->
+
+    <!-- this one is example for external-library 
+    <script src="https://unpkg.com/supersimpledev@3.2.1/external-library.js"></script> 
+    -->
+
+    <!-- load react external libraries-->
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <!-- library call babel -  --> 
+    <!-- babel is javascript compiler - translate other language into javascript -->
+    >
+    <!-- load babel external library-->
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <!-- tyep="text/babel" - we use babel to translate jsx into javascript -->
+    <script type="text/babel">
+
+      //we can add html directly into js. and we can save it on variable
+      // this is called JSX - javascript xml
+      const button = <button>Click</button>
+      const para = <p>Hi Boiz</p>
+
+      //div is a html element for creating a container
+      //we can add html elements inside the div
+      // we can use fragment to group elements together
+      // fragment is a empty html element - it does not have any tag
+      // we can use fragment like this <> </> - it is a shortcut
+
+      const div = (
+        <div>
+          <button>Click</button>
+          <p>Hi Boiz</p>
+          <h1>Welcome to React</h1>
+          {/* we can add values inside the html elements */}
+          <h2>Learn React Basics {  2  + 2   }</h2>
+        </div>
+      );
+
+
+      // Setup react 
+      // document.queryselector -  to get html element from the website and put it into js
+      //DOM - Document object Model
+      //document - get and combine js and html together 
+      // doucment.queryselecotor - het element of the page and put 
+      // inside the bracets - we told to computer wich html element we want to get from page, . - mean look for calss - (.js-container) - we looking for a class js-container
+      // after we save it to variable container
+      const container = document.querySelector('.js-container');
+
+      //set up react using html element - we save it to vontainer variable
+      //container -  this variable act like container
+      // why use container - it gives organize
+      // everything we create in react we put inside this container
+      // render = display something
+      //ReactDOM.createRoot(container).render('display something') - display something inside the container
+      ReactDOM.createRoot(container).render('Welcome to learn React ');
+     // ReactDOM.createRoot(container).render(button);
+      //ReactDOM.createRoot(container).render(para);
+      ReactDOM.createRoot(container).render(div);
+      console.log('click me button');
+
+    </script>
+  </body>
+</html>
