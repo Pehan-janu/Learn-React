@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson1 Exercise</title>
+  </head>
+
+  <body>
+    <div class="js-container"></div>
+    
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+    <script type="text/babel">
+      const div = ( 
+        <div>
+          <button>Good Job</button>
+          <p>My name is Pehan</p>
+
+        </div>
+      );
+
+      //1 pack of socks - $10   , two t shirts - $8 each
+
+      const shop = (
+        <div>
+          <p>Cotton Socks</p>
+          <p>Price:  $10</p>
+          <button>Add to Cart</button>
+        </div>
+      )
+
+      const socks = 10;
+      const tshirt = 8;
+      const productCost = socks + (2 * tshirt);
+      const shippingCost = 5;
+      const totalCost = productCost + shippingCost;
+      console.log(`Total Cost: ${totalCost}`);
+      console.log(dayjs().format('MMMM D'));
+      console.log(dayjs().format('HH:mm:ss'));
+       setInterval(() => {
+          console.log(dayjs().format('HH:mm:ss'));
+          
+          }, 1000);
+     
+      
+      const shop2 =(
+        <div>
+          
+          <p>Today is {dayjs().format('MMMM D')} </p>
+          <p>Current Time: { dayjs().format('HH:mm:ss')}</p>
+          <p>Product Cost: ${productCost}</p>
+          <p>Shipping Cost: ${shippingCost}</p>
+          <p>Total Cost: ${totalCost}</p>
+          <button>Place Your Order</button>
+        </div>
+
+      )
+
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(shop2);
+    </script>
+  </body>
+</html>
