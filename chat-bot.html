@@ -1,0 +1,99 @@
+<!DOCTYPE html.
+<html>
+  <head>
+    <title>Chat Bot</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+
+    <script type="text/babel">
+      {/* component name must start capital - PascalCase*/}
+      function ChatInput(){
+        return(
+          // <input></input>  -   shortcut -> <input /> - selfclosing tag
+          // we can use fragment to group elements together , without using <div>
+          // fragment is a empty html element - it does not have any tag
+          <>
+            {/*}
+            placeholder is a text that is shown when the input is empty
+            size is how many characters can fit in this input
+            Characters = a letter, number, symbol, space
+            */}
+            <input placeholder="Send a message to ChatBot" size="30" />
+            <button>Send</button>        
+          </>
+
+        );
+      }
+
+      //props is a way to pass data to components
+      //props  =  properties
+      //props is a object that contains data that we can use in the component  
+      //function ChatMessage(props){
+      //perameter - message and sender properties directly
+      function ChatMessage({message, sender}){
+        // we can use shortcuts - Destructuring
+        // const message = props.message;
+        // const sender = props.sender;
+       // we can use destructuring to get properties directly
+       // const {message, sender} = props;
+
+        if (sender === 'robot' ){
+          return(
+            <div>
+              {/* we can use {} to insert variable into the element */}
+              <img src="robot.png" width="40" />
+              {message}
+              {/* we can use props to get data from the component */}
+            </div>                      
+          );
+
+        }else {
+          return(
+            <div>
+              {message}
+              <img src="user.png" width="40" />
+
+            </div>
+          );
+        }
+          
+      }
+      const app = (
+
+          /*
+          We can use component like this any kind
+            {ChatInput()}
+          //component Syntax
+            <ChatInput></ChatInput>
+            <ChatInput />           
+          */
+
+        <>
+          <ChatInput />
+          {/*
+            components have attributes(html)
+            we can create any attribute we want
+
+          */}
+          <ChatMessage message="Hello ChatBot" sender="user"/>
+          <ChatMessage message="Hello.How can i help you" sender="robot"/>
+          <ChatMessage message="You can get me today date" sender="user" />
+          <ChatMessage message="Today is August 05" sender="robot" />
+        </>
+
+      );
+
+
+
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(app);
+
+    </script>
+  </body>
+</html>
+
