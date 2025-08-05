@@ -1,0 +1,80 @@
+What is react?  
+ 01. react is external library 
+ 02.that help us create website easier
+ 
+react lest us split our website into smaller piece of the website at a time
+
+HTML code - create a website
+how to load javascript to website 
+  -  using  <script></script> element . add some to inside of this tag
+  -  save javascript code in file. after add this file location to script tag under src attribute 
+    <script src=""></script> 
+     
+  
+--- React is external library ---
+
+01.external library  - React , ReactDOM  , babel
+
+babel - javascript compiler - translate other languages into javascript
+
+in react we dont use normal javascript
+we use an enhanced version of javascript  -  JSX
+
+JSX - javascript XML - same as javascript , but we can write HTML directly in our javascript code
+
+  comment in JSX - {/* we can add values inside the html elements */}
+
+problem JSX - web browser doesnt understand JSX , need to transale JSX into javascript, thats why we use babel external library
+babel transale JSX in to Javascript
+
+eg-  <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+     // type="text/babel" - tell babel to translate all the codes inside here to normal javascript
+     <script type="text/babel">
+      //we can use html tag directly to code .
+      // we can save this to variable
+      const button = <button>hello</button>
+     </script>
+
+also we can use DOM to create button in javascript
+
+const button = doucment.createElement('button');
+button.innerHTML = 'hello'
+
+* features of React 
+ we can display buttons inside container also -  
+
+ <script type = "text/babel">
+  const button = <button> Click Me</button>
+
+  const container = document.queryselector('.js-container');
+  ReactDOM.createRoot(container).render(button);
+ 
+ </script>
+
+ ReactDOM.createRoot(container).render(button); 
+
+<div> = a container , can contain other element
+
+if we want modify day format 
+library -
+<script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+
+code for modify - 
+daysjs.format('MMMM D')
+
+02.help us create website easier
+
+
+lesson2 - 
+
+Components - a pice of a website 
+            eg- search bar , buttons ..etc
+
+main idea of react -  we can create our own HTML element 
+    we can run compononets derectly 
+    self closing tags
+    <...></..>  ,  <... />  , {....()}
+
+Shortcuts in react - 
+
+const message = props.message;    -       const {message} = props;
